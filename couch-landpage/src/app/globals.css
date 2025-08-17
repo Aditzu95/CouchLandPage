@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #0e564e;
+  --color-gold: #b89b63;
+  --font-mono: "Oswald", sans-serif;
+
+  --screen-xs: 480px;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.bg-primary {
+  background-color: var(--color-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: white;
-    --foreground: #ededed;
-  }
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+.bg-important {
+  background-color: var(--color-important);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.hover\:text-primary:hover {
+  color: var(--color-primary);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.hover\:bg-secondary:hover {
+  background-color: var(--color-secondary);
+}
+
+.hover\:text-secondary:hover {
+  color: var(--color-secondary);
+}
+
+.text-important {
+  color: var(--color-important);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
+}
+
+@keyframes move-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-move-left {
+  animation: move-left 8s linear infinite;
+}
+
+@media (max-width: 600px) {
+  .MuiPickerPopper-paper {
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    width: 90vw !important;
+    max-width: 350px !important;
+    margin: auto !important;
+    left: 5vw !important;
+  }
 }
